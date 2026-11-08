@@ -22,8 +22,8 @@ class DoublyLinkedList<T> where T : IComparable<T>
 
     public int Count { get; private set; }
 
-    // Inserción ordenada. Si la lista está ascendente, inserta ascendente.
-    // Si ya fue ordenada descendentemente, mantiene el orden descendente.
+    //Ordered insertion. If the list is in ascending order, insert in ascending order.
+    // If the list has been sorted in descending order, maintain the descending order.
     public void Add(T value)
     {
         var newNode = new Node<T>(value);
@@ -38,7 +38,7 @@ class DoublyLinkedList<T> where T : IComparable<T>
 
         if (!_descending)
         {
-            // Orden ascendente
+            // orden ascendente
             Node<T>? current = head;
             while (current != null && current.Value.CompareTo(value) <= 0)
                 current = current.Next;
@@ -126,7 +126,7 @@ class DoublyLinkedList<T> where T : IComparable<T>
         Console.WriteLine();
     }
 
-    // Cambia físicamente el orden de la lista, no solo la muestra al revés.
+    // Physically change the order of the list; do not just display it in reverse.
     public void SortDescending()
     {
         if (_descending) return;
@@ -326,7 +326,7 @@ class Program
 {
     static void Main()
     {
-        // Lista genérica; en este ejemplo se usa int.
+        // Generic list; in this example int is used
         var list = new DoublyLinkedList<int>();
 
         int opcion;
